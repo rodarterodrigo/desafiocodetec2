@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:desafio_codetec2/app/modules/list_users/domain/entities/user.dart';
 import 'package:desafio_codetec2/app/modules/list_users/domain/repositories/list_users_repository.dart';
-import 'package:desafio_codetec2/app/modules/list_users/errors/failure_list_users.dart';
+import 'package:desafio_codetec2/app/modules/list_users/errors/company_errors.dart';
 import 'package:desafio_codetec2/app/modules/list_users/infra/datasources/list_users_datasource.dart';
 import 'package:desafio_codetec2/app/modules/list_users/infra/errors/datasource_error.dart';
 
@@ -11,7 +11,7 @@ class ListUsersRepository implements IListUsersRepository{
   ListUsersRepository(this.datasource):assert(datasource!=null);
 
   @override
-  Future<Either<FailureListUsers, List<User>>> listUsers() async {
+  Future<Either<FailureShowCompany, List<User>>> listUsers() async {
     try{
       return Right(await datasource.listUsers());
     }

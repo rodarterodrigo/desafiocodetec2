@@ -1,6 +1,6 @@
-import 'package:desafio_codetec2/app/modules/list_users/errors/failure_list_users.dart';
+import 'package:desafio_codetec2/app/modules/list_users/errors/company_errors.dart';
 
-class DataSourceError implements FailureListUsers{
+class DataSourceError implements FailureShowCompany{
   @override
   final dynamic message;
   DataSourceError({this.message});
