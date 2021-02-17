@@ -1,7 +1,4 @@
-abstract class FailureListUsers implements Exception{
-  final dynamic message;
-  FailureListUsers({this.message});
-}
+import 'package:desafio_codetec2/app/modules/list_users/errors/failure_list_users.dart';
 
 class GetListError implements FailureListUsers{
   @override
