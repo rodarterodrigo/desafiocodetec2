@@ -16,7 +16,13 @@ class _HomePageState extends State<HomePage> {
         title: Text(widget.title),
       ),
       body: Column(
-        children: <Widget>[],
+        children: <Widget>[
+          Center(
+            child: Text(
+              "Home"
+            ),
+          )
+        ],
       ),
     );
   }
