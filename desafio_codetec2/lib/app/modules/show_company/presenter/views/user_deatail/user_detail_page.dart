@@ -2,6 +2,7 @@ import 'package:desafio_codetec2/app/modules/show_company/domain/entities/user.d
 import 'package:desafio_codetec2/app/modules/show_company/presenter/routes/show_company_routes.dart';
 import 'package:desafio_codetec2/app/modules/show_company/presenter/shared/enums/buttom_style.dart';
 import 'package:desafio_codetec2/app/modules/show_company/presenter/shared/widgets/custom_buttom.dart';
+import 'package:desafio_codetec2/app/modules/show_company/presenter/shared/widgets/user_detail_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 class UserDetailPage extends StatelessWidget {
@@ -28,94 +29,10 @@ class UserDetailPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Nome:",
-                      style: TextStyle(
-                          fontSize: 16,
-                          color: Theme.of(context).primaryColor
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8),
-                      child: Text(
-                        user.name,
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Theme.of(context).primaryColor
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Cargo:",
-                      style: TextStyle(
-                          fontSize: 16,
-                          color: Theme.of(context).primaryColor
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8),
-                      child: Text(
-                        user.office,
-                        style: TextStyle(
-                            fontSize: 16,
-                            color: Theme.of(context).primaryColor
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Idade:",
-                      style: TextStyle(
-                          fontSize: 16,
-                          color: Theme.of(context).primaryColor
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8),
-                      child: Text(
-                        user.age,
-                        style: TextStyle(
-                            fontSize: 16,
-                            color: Theme.of(context).primaryColor
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Telefone:",
-                      style: TextStyle(
-                          fontSize: 16,
-                          color: Theme.of(context).primaryColor
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8),
-                      child: Text(
-                        user.phone,
-                        style: TextStyle(
-                            fontSize: 16,
-                            color: Theme.of(context).primaryColor
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                UserDetailRow(field: "Nome", value: user.name),
+                UserDetailRow(field: "Cargo", value: user.office,),
+                UserDetailRow(field: "Idade", value: user.age,),
+                UserDetailRow(field: "Telefone", value: user.phone,),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.stretch,

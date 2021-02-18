@@ -2,6 +2,7 @@ import 'package:desafio_codetec2/app/modules/show_company/domain/entities/user.d
 import 'package:desafio_codetec2/app/modules/show_company/presenter/routes/show_company_routes.dart';
 import 'package:desafio_codetec2/app/modules/show_company/presenter/shared/enums/buttom_style.dart';
 import 'package:desafio_codetec2/app/modules/show_company/presenter/shared/widgets/custom_buttom.dart';
+import 'package:desafio_codetec2/app/modules/show_company/presenter/shared/widgets/user_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -36,59 +37,12 @@ class UsersListPage extends StatelessWidget {
                       itemBuilder: (context, index){
                         return Padding(
                           padding: EdgeInsets.all(8),
-                          child: GestureDetector(
+                          child: UserCard(
                             onTap: () => Modular.to.pushNamed(Routes.USERDETAILPAGE, arguments: users[index]),
-                            child: Card(
-                              elevation: 8,
-                              child: Container(
-                                height: 100,
-                                width: MediaQuery.of(context).size.width,
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Hero(
-                                        tag: users[index].avatar,
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(80),
-                                          child: Image.network(
-                                            users[index].avatar,
-                                            height: 60.0,
-                                            width: 60.0,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Column(
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text(
-                                            users[index].name,
-                                            style: TextStyle(
-                                              color: Theme.of(context).primaryColor,
-                                              fontSize: 16
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text(
-                                            users[index].office,
-                                            style: TextStyle(
-                                                color: Theme.of(context).primaryColor,
-                                                fontSize: 16
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
+                            office: users[index].office,
+                            image: users[index].avatar,
+                            heroTag: users[index].avatar,
+                            name: users[index].name,
                           ),
                         );
                       },
