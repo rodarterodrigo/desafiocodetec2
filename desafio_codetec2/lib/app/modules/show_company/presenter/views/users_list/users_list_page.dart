@@ -8,7 +8,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 class UsersListPage extends StatelessWidget {
   final List<User> users;
 
-  UsersListPage(this.users);
+  UsersListPage({this.users});
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -36,37 +36,57 @@ class UsersListPage extends StatelessWidget {
                       itemBuilder: (context, index){
                         return Padding(
                           padding: EdgeInsets.all(8),
-                          child: Card(
-                            elevation: 8,
-                            child: Container(
-                              height: 100,
-                              width: MediaQuery.of(context).size.width,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(80),
-                                      child: Image.network(
-                                        users[index].avatar,
-                                        height: 60.0,
-                                        width: 60.0,
+                          child: GestureDetector(
+                            onTap: () => Modular.to.pushNamed(Routes.USERDETAILPAGE, arguments: users[index]),
+                            child: Card(
+                              elevation: 8,
+                              child: Container(
+                                height: 100,
+                                width: MediaQuery.of(context).size.width,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Hero(
+                                        tag: users[index].avatar,
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.circular(80),
+                                          child: Image.network(
+                                            users[index].avatar,
+                                            height: 60.0,
+                                            width: 60.0,
+                                          ),
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text(
-                                      users[index].name,
-                                      style: TextStyle(
-                                        color: Theme.of(context).primaryColor,
-                                        fontSize: 16
-                                      ),
+                                    Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            users[index].name,
+                                            style: TextStyle(
+                                              color: Theme.of(context).primaryColor,
+                                              fontSize: 16
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            users[index].office,
+                                            style: TextStyle(
+                                                color: Theme.of(context).primaryColor,
+                                                fontSize: 16
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),

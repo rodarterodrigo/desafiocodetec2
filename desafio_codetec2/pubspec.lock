@@ -197,7 +197,7 @@ packages:
       name: fluttertoast
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "7.1.6"
+    version: "7.1.8"
   glob:
     dependency: transitive
     description:
@@ -373,13 +373,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.5"
-  rxdart:
-    dependency: "direct main"
-    description:
-      name: rxdart
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.25.0"
   sky_engine:
     dependency: transitive
     description: flutter

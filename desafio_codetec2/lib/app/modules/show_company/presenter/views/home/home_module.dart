@@ -3,6 +3,7 @@ import 'package:desafio_codetec2/app/modules/show_company/external/datasources/s
 import 'package:desafio_codetec2/app/modules/show_company/infra/repositories/show_company_repository_impl.dart';
 import 'package:desafio_codetec2/app/modules/show_company/presenter/routes/show_company_routes.dart';
 import 'package:desafio_codetec2/app/modules/show_company/presenter/views/service_list/service_list_module.dart';
+import 'package:desafio_codetec2/app/modules/show_company/presenter/views/user_deatail/user_detail_module.dart';
 import 'package:desafio_codetec2/app/modules/show_company/presenter/views/users_list/user_list_module.dart';
 import 'package:dio/dio.dart';
 import 'home_bloc.dart';
@@ -24,6 +25,7 @@ class HomeModule extends ChildModule {
         ModularRouter(Routes.HOME, child: (context, args) => HomePage()),
         ModularRouter(Routes.USERSLISTPAGE, module: UsersListModule(), transition: TransitionType.rightToLeft),
         ModularRouter(Routes.SERVICELISTPAGE, module: ServiceListModule(), transition: TransitionType.rightToLeft),
+        ModularRouter(Routes.USERDETAILPAGE, module: UsersDetailModule(), transition: TransitionType.rightToLeft),
       ];
 
   static Inject get to => Inject<HomeModule>.of();
