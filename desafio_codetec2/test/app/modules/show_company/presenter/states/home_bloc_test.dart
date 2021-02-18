@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:desafio_codetec2/app/modules/show_company/domain/entities/company.dart';
-import 'package:desafio_codetec2/app/modules/show_company/domain/errors/get_list_error.dart';
+import 'package:desafio_codetec2/app/modules/show_company/domain/errors/show_company_error.dart';
 import 'package:desafio_codetec2/app/modules/show_company/domain/usecases/show_company.dart';
 import 'package:desafio_codetec2/app/modules/show_company/presenter/events/show_company_events.dart';
 import 'package:desafio_codetec2/app/modules/show_company/presenter/states/show_company_states.dart';
