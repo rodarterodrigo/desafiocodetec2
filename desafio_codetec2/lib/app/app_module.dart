@@ -1,3 +1,4 @@
+import 'package:desafio_codetec2/app/modules/show_company/presenter/routes/show_company_routes.dart';
 import 'app_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class AppModule extends MainModule {
 
   @override
   List<ModularRouter> get routers => [
-        ModularRouter(Modular.initialRoute, module: HomeModule()),
+        ModularRouter(Routes.HOME, module: HomeModule()),
       ];
 
   @override

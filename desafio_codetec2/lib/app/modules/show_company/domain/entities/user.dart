@@ -3,6 +3,7 @@ class User{
   final age;
   final avatar;
   final phone;
+  final office;
 
-  User({this.name, this.age, this.avatar, this.phone});
+  User({this.name, this.age, this.avatar, this.phone, this.office});
 }
